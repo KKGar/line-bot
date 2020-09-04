@@ -40,18 +40,25 @@ def handle_message(event):
     msg = event.message.text
     r = '熊熊看不懂你說什麼'
 
-    if msg == 'hi':
+    if '給我貼圖' in msg:
+        sticker_message = StickerSendMessage(
+            package_id='1',
+            sticker_id='1'
+        )
+
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
+        return 
+
+    if msg == ['hi', 'Hi']:
         r = 'hi'
     elif msg == '熊熊':
         r = '熊熊說你好'
 
     line_bot_api.reply_message(
         event.reply_token,
-        StickerSendMessage(
-    package_id='1',
-    sticker_id='1'  
-))
-        # TextSendMessage(text=r))
+        TextSendMessage(text=r))
 
 
 if __name__ == "__main__":
