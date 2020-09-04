@@ -55,9 +55,9 @@ def handle_message(event):
         r = 'hi'
     elif msg == '早安':
         r = '熊熊跟你說早安'
-    elif msg == '午安'
+    elif msg == '午安':
         r = '熊熊跟你說午安'
-    elif msg == '晚安'
+    elif msg == '晚安':
         r = '熊熊跟你說晚安'        
     elif msg == '熊熊':
         r = '熊熊說你好'
